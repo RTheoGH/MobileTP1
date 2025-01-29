@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nom :" />
+
+    <EditText
+        android:id="@+id/nomEditText"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:hint="Entrez votre nom" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prénom :" />
+
+    <EditText
+        android:id="@+id/prenomEditText"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:hint="Entrez votre prénom" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Âge :" />
+
+    <EditText
+        android:id="@+id/ageEditText"
+        android:layout_width="378dp"
+        android:layout_height="55dp"
+        android:hint="Entrez votre âge"
+        android:inputType="number" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Domaine de compétences :" />
+
+    <EditText
+        android:id="@+id/domaineEditText"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:hint="Ex: GL, IASD, IMAGINE..." />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Numéro de téléphone :" />
+
+    <EditText
+        android:id="@+id/phoneEditText"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:hint="Entrez votre numéro"
+        android:inputType="phone" />
+
+    <Button
+        android:id="@+id/validerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Valider"/>
+</LinearLayout>
