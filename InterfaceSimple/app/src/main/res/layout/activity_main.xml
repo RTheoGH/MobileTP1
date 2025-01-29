@@ -13,8 +13,11 @@
     <EditText
         android:id="@+id/nomEditText"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:hint="@string/enter_last_name" />
+        android:layout_height="61dp"
+        android:autofillHints="Dupont"
+        android:hint="@string/enter_last_name"
+        android:inputType="textPersonName"
+        android:digits=" -abcdefghijklmnopqrstuvwxyzéèABCDEFGHIJKLMNOPQRSTUVWXYZ"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,8 +27,11 @@
     <EditText
         android:id="@+id/prenomEditText"
         android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:hint="@string/enter_first_name" />
+        android:layout_height="63dp"
+        android:autofillHints="Dupont"
+        android:hint="@string/enter_first_name"
+        android:inputType="textPersonName"
+        android:digits=" -abcdefghijklmnopqrstuvwxyzéèABCDEFGHIJKLMNOPQRSTUVWXYZ"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,6 +42,7 @@
         android:id="@+id/ageEditText"
         android:layout_width="378dp"
         android:layout_height="55dp"
+        android:autofillHints="50"
         android:hint="@string/enter_age"
         android:inputType="number" />
 
@@ -48,7 +55,9 @@
         android:id="@+id/domaineEditText"
         android:layout_width="match_parent"
         android:layout_height="62dp"
-        android:hint="@string/enter_domain" />
+        android:autofillHints="none"
+        android:hint="@string/enter_domain"
+        android:inputType="text" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -59,8 +68,10 @@
         android:id="@+id/phoneEditText"
         android:layout_width="match_parent"
         android:layout_height="61dp"
+        android:autofillHints="0123456789"
         android:hint="@string/enter_number"
-        android:inputType="phone" />
+        android:inputType="phone"
+        android:maxLength="10"/>
 
     <Button
         android:id="@+id/validerButton"
