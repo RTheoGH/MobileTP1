@@ -8,63 +8,63 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nom :" />
+        android:text="@string/last_name" />
 
     <EditText
         android:id="@+id/nomEditText"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:hint="Entrez votre nom" />
+        android:hint="@string/enter_last_name" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Prénom :" />
+        android:text="@string/first_name" />
 
     <EditText
         android:id="@+id/prenomEditText"
         android:layout_width="match_parent"
         android:layout_height="58dp"
-        android:hint="Entrez votre prénom" />
+        android:hint="@string/enter_first_name" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Âge :" />
+        android:text="@string/age" />
 
     <EditText
         android:id="@+id/ageEditText"
         android:layout_width="378dp"
         android:layout_height="55dp"
-        android:hint="Entrez votre âge"
+        android:hint="@string/enter_age"
         android:inputType="number" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Domaine de compétences :" />
+        android:text="@string/domain" />
 
     <EditText
         android:id="@+id/domaineEditText"
         android:layout_width="match_parent"
         android:layout_height="62dp"
-        android:hint="Ex: GL, IASD, IMAGINE..." />
+        android:hint="@string/enter_domain" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Numéro de téléphone :" />
+        android:text="@string/phone" />
 
     <EditText
         android:id="@+id/phoneEditText"
         android:layout_width="match_parent"
         android:layout_height="61dp"
-        android:hint="Entrez votre numéro"
+        android:hint="@string/enter_number"
         android:inputType="phone" />
 
     <Button
         android:id="@+id/validerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Valider"/>
+        android:text="@string/submit_button"/>
 </LinearLayout>
