@@ -1,5 +1,7 @@
 package com.example.interfacesimple2
 
+import android.app.AlertDialog
+import android.app.DialogFragment
 import android.os.Bundle
 import android.widget.EditText
 import androidx.activity.ComponentActivity
@@ -33,4 +35,3 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-

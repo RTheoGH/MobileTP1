@@ -13,4 +13,10 @@
     <string name="enter_domain">Ex: GL, IASD, IMAGINE...</string>
     <string name="enter_number">Enter your phone number</string>
     <string name="welcome_message">Welcome</string>
+    <string name="validation_title">Validation</string>
+    <string name="validation_text">Confirm ?</string>
+    <string name="validation_no">No</string>
+    <string name="validation_yes">Yes</string>
+    <string name="return_button">Return</string>
+    <string name="ok_button">OK</string>
 </resources>
