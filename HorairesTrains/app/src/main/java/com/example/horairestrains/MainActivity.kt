@@ -15,12 +15,17 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Search
+import androidx.compose.material3.Card
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.IconButtonColors
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults.topAppBarColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -33,12 +38,25 @@ import androidx.compose.ui.unit.dp
 import com.example.horairestrains.ui.theme.HorairesTrainsTheme
 
 class MainActivity : ComponentActivity() {
+    @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             HorairesTrainsTheme {
-                Scaffold{ innerPadding ->
+                Scaffold(
+                    topBar = {
+                        TopAppBar(
+                            colors = topAppBarColors(
+                                containerColor = MaterialTheme.colorScheme.primaryContainer,
+                                titleContentColor = MaterialTheme.colorScheme.primary,
+                            ),
+                            title = {
+                                Text("Horaires de trains")
+                            }
+                        )
+                    }
+                ){ innerPadding ->
                     Trains(innerPadding)
                 }
             }
@@ -154,8 +172,15 @@ fun Trains(innerPadding: PaddingValues) {
                 )
             }
         }
-        Spacer(modifier = Modifier.height(10.dp))
+
         LazyColumn(Modifier.fillMaxSize()) {
+            item {
+                Text(
+                    text = "Liste des trains",
+                    style = MaterialTheme.typography.titleLarge,
+                    modifier = Modifier.padding(10.dp)
+                )
+            }
             items(results.size) { result ->
                 Text(
                     results[result],
