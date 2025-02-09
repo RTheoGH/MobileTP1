@@ -1,5 +1,6 @@
 package com.example.agenda
 
+import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -119,13 +120,16 @@ fun Evenement(innerPadding: PaddingValues){
         )
         Button(
             onClick = {
-                val intentBack = Intent(ctx,MainActivity::class.java).apply {
+                val intentBack = Intent().apply {
                     putExtra("date",date.value)
                     putExtra("nom",nom)
                     putExtra("desc",desc)
                 }
 
-                ctx.startActivity(intentBack)
+                (ctx as? ComponentActivity)?.apply{
+                    setResult(RESULT_OK, intentBack)
+                    finish()
+                }
             }
         ) {
             Text("Ajouter")
