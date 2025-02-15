@@ -21,6 +21,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.interfacesimple2.ui.theme.InterfaceSimple2Theme
 
+// Structure de récupération des informations
 data class Infos(
     val last_name: String?,
     val first_name: String?,
@@ -36,6 +37,7 @@ class SecondActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
 
+            // récupération des informations
             val infos = Infos(
                 last_name = intent.getStringExtra("lastname"),
                 first_name = intent.getStringExtra("firstname"),
@@ -77,7 +79,10 @@ fun Information(innerPadding:PaddingValues,infos:Infos){
         Text(text = stringResource(R.string.domain)+ " " + (infos.domain?: ""))
         Text(text = stringResource(R.string.phone)+ " " + (infos.phone?: ""))
 
+        // retour à l'activité précédente
         val intent1 = Intent(ctx,MainActivity::class.java).apply{}
+
+        // activité suivante
         val intent2 = Intent(ctx,ThirdActivity::class.java).apply{
             putExtra("lastname",infos.last_name)
             putExtra("firstname",infos.first_name)

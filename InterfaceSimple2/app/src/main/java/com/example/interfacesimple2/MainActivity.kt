@@ -63,13 +63,15 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Form(innerPadding: PaddingValues){
+
+    // Variables mutables
     var last_name by remember { mutableStateOf("") }
     var first_name by remember { mutableStateOf("") }
     var age by remember { mutableStateOf("") }
     var domain by remember { mutableStateOf("") }
     var number by remember { mutableStateOf("") }
     var backgroundColor by remember { mutableStateOf(Color.Transparent) }
-    var ctx = LocalContext.current
+    val ctx = LocalContext.current
 
     Column(Modifier.padding(innerPadding).padding(10.dp)){
         OutlinedTextField(
@@ -131,6 +133,7 @@ fun Form(innerPadding: PaddingValues){
             builder.setTitle(R.string.validation_title)
             builder.setMessage(R.string.validation_text)
 
+            // Bouton d'acceptation
             builder.setPositiveButton(R.string.validation_yes){dialog, which ->
                 backgroundColor = Color(45,115,217)
                 Toast.makeText(
@@ -148,6 +151,7 @@ fun Form(innerPadding: PaddingValues){
                 dialog.dismiss()
             }
 
+            // Bouton de refus
             builder.setNegativeButton(R.string.validation_no){dialog, which ->
                 backgroundColor = Color.Transparent
                 dialog.dismiss()

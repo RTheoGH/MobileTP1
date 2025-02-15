@@ -74,6 +74,8 @@ class ThirdActivity : ComponentActivity() {
 @Composable
 fun InterfaceAppel(innerPadding:PaddingValues,p:String) {
     val ctx = LocalContext.current
+
+    // demande de permission
     val perm = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.RequestPermission()
     ) { grant ->
@@ -106,6 +108,7 @@ fun InterfaceAppel(innerPadding:PaddingValues,p:String) {
                 disabledContentColor = Color.Black
             ),
             onClick = {
+                // Check si on a la permission d'appeler
                 if (ContextCompat.checkSelfPermission(ctx,android.Manifest.permission.CALL_PHONE)
                     == PackageManager.PERMISSION_GRANTED
                 ) {
@@ -124,6 +127,7 @@ fun InterfaceAppel(innerPadding:PaddingValues,p:String) {
     }
 }
 
+// Intent implicite
 fun appel(ctx:Context, p:String){
     val intentCall = Intent(Intent.ACTION_CALL).apply {
         data = Uri.parse("tel:$p")
