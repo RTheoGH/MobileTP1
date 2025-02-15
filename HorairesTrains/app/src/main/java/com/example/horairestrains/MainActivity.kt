@@ -67,6 +67,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Trains(innerPadding: PaddingValues) {
 
+    // Liste de trains
     val trains = listOf(
         "08:00 | Lyon - Paris | 12:00",
         "16:00 | Montpellier - Lyon | 18:00",
@@ -124,6 +125,8 @@ fun Trains(innerPadding: PaddingValues) {
         "07:15 | Bordeaux - Biarritz | 09:30",
         "16:45 | Paris - Nice | 23:00"
     )
+
+    // variables mutables
     var depart by remember { mutableStateOf("") }
     var destination by remember { mutableStateOf("") }
     var results by remember { mutableStateOf(listOf<String>()) }
@@ -163,6 +166,8 @@ fun Trains(innerPadding: PaddingValues) {
                     disabledContentColor = Color.Black
                 ),
                 onClick = {
+
+                    // récupération des résultats de recherche
                     results = trainsList(trains,depart,destination)
                 }
             ) {
@@ -192,6 +197,7 @@ fun Trains(innerPadding: PaddingValues) {
 }
 
 fun trainsList(trains: List<String>, a: String, b: String): List<String> {
+    // Cherche les trains qui contiennent a et/ou b
     return trains.filter { train ->
         (a.isEmpty() || train.contains("$a -", ignoreCase = true)) &&
                 (b.isEmpty() || train.contains("- $b", ignoreCase = true))
