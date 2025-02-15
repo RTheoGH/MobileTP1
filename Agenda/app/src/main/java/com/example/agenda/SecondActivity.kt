@@ -13,7 +13,6 @@ import androidx.compose.foundation.gestures.waitForUpOrCancellation
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
@@ -50,7 +49,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Popup
 import com.example.agenda.ui.theme.AgendaTheme
 import java.text.SimpleDateFormat
-import java.util.Calendar
 import java.util.Date
 import java.util.Locale
 
@@ -81,13 +79,12 @@ class SecondActivity : ComponentActivity() {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Evenement(innerPadding: PaddingValues){
 
+    // Variables mutables
     var nom by remember { mutableStateOf("") }
     var desc by remember { mutableStateOf("") }
-
     val date = remember { mutableStateOf("") }
 
     val ctx = LocalContext.current
@@ -137,6 +134,7 @@ fun Evenement(innerPadding: PaddingValues){
     }
 }
 
+// Lien vers la documentation des DatePicker
 // https://developer.android.com/develop/ui/compose/components/datepickers?hl=fr
 
 @OptIn(ExperimentalMaterial3Api::class)

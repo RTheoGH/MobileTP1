@@ -46,6 +46,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             val events = remember { mutableStateListOf<String>() }
+
+            // Récupération evenement
             val launcher = rememberLauncherForActivityResult(
                 contract = ActivityResultContracts.StartActivityForResult()
             ) { result ->
@@ -115,6 +117,7 @@ fun Agenda(innerPadding:PaddingValues,events:List<String>,onAddEvent: () -> Unit
                     modifier = Modifier.padding(10.dp)
                 )
             }
+            // Affichage des evenements
             items(events) { event ->
                 NewEvent(event,onDeleteEvent)
             }
